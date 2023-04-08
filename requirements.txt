@@ -1,0 +1,4 @@
+msgpack
+numpy
+requests
+ujson
