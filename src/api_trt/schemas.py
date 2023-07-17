@@ -61,13 +61,12 @@ class BodyExtract(BaseModel):
                                                      example=True,
                                                      description='Return all timings.')
 
-    api_ver: Optional[str] = pydantic.Field(default=settings.defaults.api_ver,
-                                            example='2',
-                                            description='Output data serialization format.')
-
     msgpack: Optional[bool] = pydantic.Field(default=False,
                                              example=False,
                                              description='Use MSGPACK for response serialization')
+    use_rotation: Optional[bool] = pydantic.Field(default=False,
+                                                  example=False,
+                                                  description='Use rotation for better detection. Not yet implemented.')
 
 
 class BodyDraw(BaseModel):
@@ -100,3 +99,6 @@ class BodyDraw(BaseModel):
     detect_masks: Optional[bool] = pydantic.Field(default=settings.defaults.detect_masks,
                                                   example=settings.defaults.detect_masks,
                                                   description='Detect medical masks')
+    use_rotation: Optional[bool] = pydantic.Field(default=False,
+                                                  example=False,
+                                                  description='Use rotation for better detection. Not yet implemented.')
